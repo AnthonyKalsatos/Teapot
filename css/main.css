@@ -1,0 +1,54 @@
+/*
+F5ECD9
+2BACB5
+B4CCB9
+E84D5B
+3B3B3B
+ */
+
+* {
+	font-family:	"HelveticaNeue-Light", "Helvetica Neue Light",
+					"Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+					sans-serif;
+	font-weight: 300;
+}
+
+body {
+	background: #B4CCB9;
+	color: #3B3B3B;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+p {
+	font-size: 25px;
+}
+
+a {
+	color: #E84D5B;
+	text-decoration: none;
+}
+
+#content {
+	background: #fff;
+	border-radius: 25px;
+	/*
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         3px 3px 5px 6px #ccc;
+	*/
+	width: 940px;
+	margin: 50px auto;
+	padding: 25px
+}
+
+#errorcode {
+	color: #2BACB5;
+}
+
+#teapot {
+	width:250px;
+	text-align: right;
+}
