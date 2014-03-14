@@ -14,9 +14,9 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 		s.send_response(418)
 		s.send_header("Content-type", "text/html")
 		s.end_headers()
-		s.wfile.write("<html><head><title></title></head>")
-		s.wfile.write("<body><p>ERROR: 418 I'm a teapot</p>")
-		s.wfile.write("</body></html>")
+		f = open("index.html")
+		s.wfile.write(f.read())
+		f.close()
 
 if __name__ == '__main__':
 	server_class = BaseHTTPServer.HTTPServer
