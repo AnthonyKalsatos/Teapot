@@ -7,14 +7,19 @@ PORT_NUMBER = 8080
 
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 	def do_HEAD(s):
-		s.send_response(418)
+		s.send_response(200)
 		s.send_header("Content-type", "text/html")
 		s.end_headers()
 	def do_GET(s):
-		s.send_response(418)
-		s.send_header("Content-type", "text/html")
+		if s.path == "/":
+			s.send_response(418)
+			s.send_header("Content-type", "text/html")
+			s.path = "/index.html"
+		else:
+			s.send_response(200)
+			s.send_header("Content-type", "image/x-icon")
 		s.end_headers()
-		f = open("index.html")
+		f = open(s.path[1:])
 		s.wfile.write(f.read())
 		f.close()
 
