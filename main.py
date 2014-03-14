@@ -23,6 +23,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 		s.wfile.write(f.read())
 		f.close()
 
+
 if __name__ == '__main__':
 	server_class = BaseHTTPServer.HTTPServer
 	httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
