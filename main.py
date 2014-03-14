@@ -5,6 +5,7 @@ import os
 
 HOST_NAME = "localhost"
 PORT_NUMBER = 8080
+mimtypes.init()
 
 
 class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
@@ -20,7 +21,7 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 			s.path = "/index.html"
 		elif ext in (".html", ".css", ".js"):
 			s.send_response(200)
-			s.send_header('Content-type', types_map[ext])
+			s.send_header('Content-type', mimetypes.types_map[ext])
 		s.end_headers()
 		f = open(s.path[1:])
 		s.wfile.write(f.read())
