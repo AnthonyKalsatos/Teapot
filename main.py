@@ -18,11 +18,11 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 			s.send_response(418)
 			s.send_header("Content-type", "text/html")
 			s.path = "/index.html"
-		elif ext in (".html", ".css", ".js", ".png", ".ico"):
+		else: #if ext in (".html", ".css", ".js", ".png", ".ico"):
 			s.send_response(200)
 			s.send_header('Content-type', types_map[ext])
 		s.end_headers()
-		f = open(s.path[1:], "rb")
+		f = open(s.path[1:])
 		s.wfile.write(f.read())
 		f.close()
 
